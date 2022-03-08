@@ -13,7 +13,6 @@ export const ChatContainer = styled.div`
 export const ChatHeader = styled.div`
   display: flex;
   justify-content: flex-start;
-  min-height: 12%;
 
   h2 {
     color: #102a43;
@@ -24,7 +23,15 @@ export const Messages = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin: 1.5em 0;
+  padding: 0.5em 0;
   overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Icon = styled.div`
@@ -42,7 +49,7 @@ export const MessageContent = styled.p``;
 
 export const Bubble = styled.div`
   display: flex;
-  max-width: 40em;
+  max-width: 70%;
   padding: 1em 1em;
   margin-bottom: 1em;
   align-items: center;
@@ -56,6 +63,10 @@ export const Message = styled.div`
 
   ${Icon} {
     display: ${({ isSender }) => (isSender ? 'none' : 'block')};
+    height: 2.5em;
+    width: 2.5em;
+    min-height: 2.5em;
+    min-width: 2.5em;
   }
 
   ${Bubble} {
