@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { Icon } from '../Common/Common';
 
 export const ChatContainer = styled.div`
   display: flex;
-  height: 80vh;
   padding: 2em;
   flex-direction: column;
   background-color: #fff;
   border-radius: 2em;
   box-sizing: border-box;
+  grid-area: chat;
 `;
 
 export const ChatHeader = styled.div`
@@ -34,17 +35,6 @@ export const Messages = styled.div`
   }
 `;
 
-export const Icon = styled.div`
-  height: 3em;
-  width: 3em;
-  min-height: 3em;
-  min-width: 3em;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: #27ab83;
-  margin-right: 1em;
-`;
-
 export const MessageContent = styled.p``;
 
 export const Bubble = styled.div`
@@ -67,6 +57,7 @@ export const Message = styled.div`
     width: 2.5em;
     min-height: 2.5em;
     min-width: 2.5em;
+    margin-right: 1em;
   }
 
   ${Bubble} {
@@ -89,34 +80,4 @@ export const Textfield = styled.div`
   align-items: center;
   padding: 0.5em;
   border-radius: 0.5em;
-`;
-
-export const Input = styled.input`
-  min-width: 10em;
-  min-height: 3em;
-  background-color: inherit;
-  padding-left: 1em;
-  border: 0;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-export const IconButton = styled.button`
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 50%;
-  min-height: 3em;
-  min-width: 3em;
-
-  svg {
-    fill: #366d6f;
-  }
-
-  &:hover {
-    background-color: rgba(54, 109, 111, 0.1);
-  }
 `;

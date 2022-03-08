@@ -1,5 +1,6 @@
 import React from 'react';
-import { ChatContainer, ChatHeader, Bubble, Messages, Message, Icon, Textfield, Input, IconButton, MessageContent } from './Chat.styles';
+import { ChatContainer, ChatHeader, Bubble, Messages, Message, Textfield, MessageContent } from './Chat.styles';
+import { Input, IconButton, Icon } from '../Common/Common';
 import { FaPaperPlane } from 'react-icons/fa';
 
 const Chat = () => {
@@ -37,19 +38,19 @@ const Chat = () => {
         <Message isSender={false} >
           <Icon />
           <Bubble>
-            <MessageContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</MessageContent>
+            <MessageContent>Donec ac turpis lacus.</MessageContent>
           </Bubble>
         </Message>
         <Message isSender={false} >
           <Icon />
           <Bubble>
-            <MessageContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</MessageContent>
+            <MessageContent>Donec sit amet libero quis lorem gravida faucibus ac eu orci.</MessageContent>
           </Bubble>
         </Message>
         <Message isSender={false} >
           <Icon />
           <Bubble>
-            <MessageContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</MessageContent>
+            <MessageContent>Nam congue enim sodales, mollis nulla molestie, lobortis nisi.</MessageContent>
           </Bubble>
         </Message>
       </Messages>
