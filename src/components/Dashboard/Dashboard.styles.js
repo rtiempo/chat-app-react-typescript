@@ -6,7 +6,7 @@ export const DashboardContainer = styled.div`
   padding: 0 2rem 2rem;
   box-sizing: border-box;
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     padding: 0;
   }
 `;
@@ -22,7 +22,7 @@ export const Grid = styled.div`
     'nav nav'
     'contacts chat';
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
     grid-template-areas:
       'nav'

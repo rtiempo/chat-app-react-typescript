@@ -10,8 +10,9 @@ export const SearchBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
-  margin: 0 0 0.5rem;
+  padding: 0.25rem;
+  margin: 0 0 1.5rem;
+  overflow: hidden;
   border-radius: 2rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
@@ -19,6 +20,15 @@ export const SearchBar = styled.div`
 export const ContactList = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 75vh;
+  max-height: 75vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Notification = styled.div`

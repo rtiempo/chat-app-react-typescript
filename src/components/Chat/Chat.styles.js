@@ -8,7 +8,7 @@ export const ChatContainer = styled.div`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   grid-area: chat;
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     margin: 0;
     border-radius: 2rem 2rem 0 0;
   }
@@ -26,7 +26,7 @@ export const ChatContent = styled.div`
     'messages'
     'textfield';
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     max-height: 90vh;
     padding: 1rem;
   }
@@ -102,7 +102,7 @@ export const Textfield = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 1rem;
   grid-area: textfield;
 `;
