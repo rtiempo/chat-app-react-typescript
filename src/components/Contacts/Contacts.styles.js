@@ -10,8 +10,10 @@ export const SearchBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em;
-  border-radius: 2em;
+  padding: 0.5rem;
+  margin: 0 0 0.5rem;
+  border-radius: 2rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
 export const ContactList = styled.div`
@@ -37,8 +39,8 @@ export const Notification = styled.div`
 
 export const Contact = styled.div`
   display: grid;
-  margin: 1em 0;
-  gap: 0.5em;
+  margin: 1rem 0;
+  gap: 0.5rem;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas:
     'icon name notification'

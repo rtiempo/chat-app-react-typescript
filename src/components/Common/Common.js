@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Input = styled.input`
-  min-height: 3em;
+  min-height: 3rem;
   background-color: inherit;
-  padding-left: 1em;
+  padding-left: 1rem;
   border: 0;
 
   &:focus {
@@ -17,8 +17,8 @@ export const IconButton = styled.button`
   outline: none;
   cursor: pointer;
   border-radius: 50%;
-  min-height: 3em;
-  min-width: 3em;
+  min-height: 3rem;
+  min-width: 3rem;
 
   svg {
     fill: #366d6f;
@@ -30,10 +30,10 @@ export const IconButton = styled.button`
 `;
 
 export const Icon = styled.div`
-  height: 3em;
-  width: 3em;
-  min-height: 3em;
-  min-width: 3em;
+  height: 3rem;
+  width: 3rem;
+  min-height: 3rem;
+  min-width: 3rem;
   border-radius: 50%;
   overflow: hidden;
   background-color: #27ab83;
