@@ -38,7 +38,8 @@ export const Icon = styled.div`
   overflow: hidden;
   background-color: #27ab83;
   margin-right: 1em;
-  background-image: url('https://i.pravatar.cc/300');
+  background-image: url(${({ imageUrl }) =>
+    imageUrl || 'https://i.pravatar.cc/300'});
   background-size: cover;
   background-position: top center;
 `;

@@ -47,9 +47,9 @@ export const Messages = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   grid-area: messages;
-  min-height: 65vh;
-  max-height: 65vh;
-  margin: 0.5rem 0;
+  min-height: 60vh;
+  max-height: 60vh;
+  margin: 0.5rem 0 1rem;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

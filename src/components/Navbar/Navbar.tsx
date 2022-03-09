@@ -1,9 +1,15 @@
 import React from 'react';
-import { Nav } from './Navbar.styles';
+import { Nav, Logo } from './Navbar.styles';
+import { FaFire } from 'react-icons/fa'
 
 const Navbar = () => {
   return (
-    <Nav>Navbar</Nav>
+    <Nav>
+      <Logo>
+        <FaFire />
+        <h2>ChatApp</h2>
+      </Logo>
+    </Nav>
   )
 }
 

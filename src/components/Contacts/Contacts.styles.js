@@ -3,6 +3,10 @@ import { Icon } from '../Common/Common';
 
 export const ContactsContainer = styled.div`
   grid-area: contacts;
+
+  @media (max-width: 640px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const SearchBar = styled.div`
@@ -10,8 +14,8 @@ export const SearchBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.25rem;
   margin: 0 0 1.5rem;
+  padding: 0.25rem;
   overflow: hidden;
   border-radius: 2rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -20,8 +24,8 @@ export const SearchBar = styled.div`
 export const ContactList = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 75vh;
-  max-height: 75vh;
+  min-height: 72vh;
+  max-height: 72vh;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -49,25 +53,29 @@ export const Notification = styled.div`
 
 export const Contact = styled.div`
   display: grid;
-  margin: 1rem 0;
-  gap: 0.5rem;
+  padding: 1rem 1rem;
+  gap: 0.25rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas:
     'icon name notification'
     'icon message notification';
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
 
   ${Icon} {
     grid-area: icon;
   }
 
   h4 {
+    color: #102a43;
     grid-area: name;
   }
 
   p {
+    color: #102a43;
     font-size: 0.9rem;
     white-space: nowrap;
     overflow: hidden;
@@ -78,5 +86,13 @@ export const Contact = styled.div`
   ${Notification} {
     grid-area: notification;
     margin-left: auto;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  @media (max-width: 640px) {
+    padding: 1rem 0.5rem;
   }
 `;
