@@ -64,6 +64,7 @@ export const Contact = styled.div`
   grid-template-areas:
     'icon name notification'
     'icon message notification';
+  transition: background-color, 0.2s;
 
   ${Icon} {
     grid-area: icon;
