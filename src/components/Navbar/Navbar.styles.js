@@ -7,6 +7,10 @@ export const Nav = styled.div`
   align-items: center;
   min-height: 8vh;
   grid-area: nav;
+
+  @media (max-width: 640px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 export const Logo = styled.div`

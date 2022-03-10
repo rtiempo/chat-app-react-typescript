@@ -19,6 +19,10 @@ export const SearchBar = styled.div`
   overflow: hidden;
   border-radius: 2rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  @media (max-width: 640px) {
+    margin: 0;
+  }
 `;
 
 export const ContactList = styled.div`
@@ -32,6 +36,15 @@ export const ContactList = styled.div`
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: 640px) {
+    flex-direction: row;
+    overflow-y: none;
+    overflow-x: scroll;
+    max-width: 90vw;
+    min-height: 15vh;
+    max-height: 15vh;
   }
 `;
 
@@ -95,5 +108,34 @@ export const Contact = styled.div`
 
   @media (max-width: 640px) {
     padding: 1rem 0.5rem;
+    word-break: break-word;
+    min-width: 4.5rem;
+    text-align: center;
+    gap: 0;
+    grid-template-areas:
+      'icon'
+      'name';
+
+    ${Icon} {
+      margin: auto;
+    }
+
+    h4 {
+      font-size: 0.75rem;
+      overflow: hidden;
+      max-width: 4.5rem;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    p {
+      display: none;
+    }
+
+    ${Notification} {
+      display: none;
+    }
   }
 `;

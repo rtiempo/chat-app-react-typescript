@@ -13,7 +13,7 @@ export const DashboardContainer = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  gap: 2em;
+  gap: 1rem;
   max-width: 100%;
   max-height: 100%;
   align-items: start;
@@ -23,6 +23,7 @@ export const Grid = styled.div`
     'contacts chat';
 
   @media (max-width: 640px) {
+    gap: 0;
     grid-template-columns: 1fr;
     grid-template-areas:
       'nav'

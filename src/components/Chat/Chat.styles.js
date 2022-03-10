@@ -27,7 +27,7 @@ export const ChatContent = styled.div`
     'textfield';
 
   @media (max-width: 640px) {
-    max-height: 90vh;
+    max-height: 70vh;
     padding: 1rem;
   }
 `;
@@ -47,8 +47,8 @@ export const Messages = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   grid-area: messages;
-  min-height: 60vh;
-  max-height: 60vh;
+  min-height: 50vh;
+  max-height: 50vh;
   margin: 0.5rem 0 1rem;
   overflow-y: scroll;
   -ms-overflow-style: none;
