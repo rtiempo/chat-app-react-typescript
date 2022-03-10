@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Nav, Logo, Menu, Dropdown, DropdownHeader, DropdownList, DropdownItem } from './Navbar.styles';
 import { Icon } from '../Common/Common';
-import { FaFire, FaAngleDown } from 'react-icons/fa'
+import { FaFire, FaAngleDown } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

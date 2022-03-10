@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ChatContainer, ChatHeader, Bubble, Messages, Message, Textfield, MessageContent, ChatContent } from './Chat.styles';
 import { Input, IconButton, Icon } from '../Common/Common';
 import { FaPaperPlane } from 'react-icons/fa';
