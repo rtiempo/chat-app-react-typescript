@@ -5,6 +5,7 @@ export const Input = styled.input`
   background-color: inherit;
   padding-left: 1rem;
   border: 0;
+  flex-grow: 1;
 
   &:focus {
     outline: none;

@@ -9,8 +9,9 @@ export const LoginContainer = styled.div`
 `;
 
 export const Textfield = styled.div`
+  display: flex;
   background-color: #f0f4f8;
-  padding: 0.25rem;
+  padding: 0 1rem 0 0;
   border-radius: 0.5rem;
 `;
 
@@ -20,6 +21,25 @@ export const Button = styled.input`
   color: #fff;
   border: none;
   border-radius: 0.5rem;
+
+  /* :hover,
+  :focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  :hover {
+    transform: translateY(-1px);
+  }
+
+  :active {
+    background-color: #f0f0f1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+  } */
 `;
 
 export const Logo = styled.div`
@@ -55,6 +75,7 @@ export const Form = styled.form`
 
   input[type='submit'] {
     margin: 1rem 0 0;
+    cursor: pointer;
   }
 
   p,

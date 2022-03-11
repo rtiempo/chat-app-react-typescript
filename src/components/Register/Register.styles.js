@@ -9,8 +9,9 @@ export const RegisterContainer = styled.div`
 `;
 
 export const Textfield = styled.div`
+  display: flex;
   background-color: #f0f4f8;
-  padding: 0.25rem;
+  padding: 0 1rem 0 0;
   border-radius: 0.5rem;
 `;
 
@@ -55,6 +56,7 @@ export const Form = styled.form`
 
   input[type='submit'] {
     margin: 1rem 0 0;
+    cursor: pointer;
   }
 
   p,
