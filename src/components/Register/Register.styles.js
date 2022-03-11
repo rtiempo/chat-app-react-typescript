@@ -15,14 +15,6 @@ export const Textfield = styled.div`
   border-radius: 0.5rem;
 `;
 
-export const Button = styled.input`
-  min-height: 3rem;
-  background-color: #27ab83;
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-`;
-
 export const Logo = styled.div`
   display: flex;
   align-items: center;

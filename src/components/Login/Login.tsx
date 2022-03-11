@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { LoginContainer, Form, Textfield, Button } from './Login.styles';
-import { Input } from '../Common/Common';
+import { LoginContainer, Form, Textfield } from './Login.styles';
+import { Input, Button } from '../Common/Common';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { auth } from '../../firebase';
 import firebase from 'firebase/compat/app';

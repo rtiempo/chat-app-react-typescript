@@ -15,33 +15,6 @@ export const Textfield = styled.div`
   border-radius: 0.5rem;
 `;
 
-export const Button = styled.input`
-  min-height: 3rem;
-  background-color: #27ab83;
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-
-  /* :hover,
-  :focus {
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    color: rgba(0, 0, 0, 0.65);
-  }
-
-  :hover {
-    transform: translateY(-1px);
-  }
-
-  :active {
-    background-color: #f0f0f1;
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-    color: rgba(0, 0, 0, 0.65);
-    transform: translateY(0);
-  } */
-`;
-
 export const Logo = styled.div`
   display: flex;
   align-items: center;

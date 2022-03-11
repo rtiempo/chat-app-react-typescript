@@ -44,3 +44,35 @@ export const Icon = styled.div`
   background-size: cover;
   background-position: top center;
 `;
+
+export const Button = styled.input`
+  min-height: 3rem;
+  background-color: #27ab83;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+
+  :hover,
+  :focus {
+    background-color: #fff;
+    color: #27ab83;
+    border: 1px solid #27ab83;
+    font-weight: bold;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  }
+
+  :hover {
+    transform: translateY(-2px);
+  }
+
+  :active {
+    background-color: #fff;
+    color: #102a43;
+    border: 1px solid #27ab83;
+    font-weight: bold;
+    transform: translateY(0);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  }
+`;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { RegisterContainer, Form, Textfield, Button, Logo } from './Register.styles';
-import { Input } from '../Common/Common';
-import { FaFire } from 'react-icons/fa';
+import { RegisterContainer, Form, Textfield } from './Register.styles';
+import { Input, Button } from '../Common/Common';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 type Inputs = {
@@ -24,10 +23,6 @@ const Register = () => {
   return (
     <RegisterContainer>          
       <Form onSubmit={handleSubmit(handleOnSubmit)}>
-        {/* <Logo>
-          <FaFire />
-          <h2>ChatApp</h2>
-        </Logo> */}
         <h2>Get Started</h2>
         <h4>Sign up to continue.</h4>
         <Textfield>
