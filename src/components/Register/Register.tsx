@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RegisterContainer, Form, Textfield } from './Register.styles';
 import { Input, Button } from '../Common/Common';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase';
 
 type Inputs = {
   name: string;
@@ -14,10 +16,17 @@ const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [user, setUser] = useState({});
 
-  const handleOnSubmit: SubmitHandler<Inputs> = (data) => {
+  useEffect(() => {
+    console.log('USER: ', user);
+  }, [user])
+  
+
+  const handleOnSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(name, email, password);
     console.log(data);
+    setUser(await createUserWithEmailAndPassword(auth, email, password));
   }
 
   return (
