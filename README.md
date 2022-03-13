@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Chat App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a chat app built using react, typescript and firebase.
 
 ## Available Scripts
 
