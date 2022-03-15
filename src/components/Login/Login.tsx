@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LoginContainer, Form, Textfield } from './Login.styles';
 import { Input, Button } from '../Common/Common';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { auth } from '../../firebase';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import firebaseui from 'firebaseui';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 type Inputs = {
   email: string;
@@ -17,10 +14,16 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [user, setUser] = useState({});
 
-  const handleOnSubmit: SubmitHandler<Inputs> = (data) => {
+  useEffect(() => {
+    console.log('USER: ', user);
+  }, [user])
+
+  const handleOnSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(email, password);
     console.log(data);
+    setUser(await signInWithEmailAndPassword(auth, email, password));
   }
   // const ui = new firebaseui.auth.AuthUI(auth());
   // ui.start('#firebaseui-auth-container', {
@@ -53,7 +56,6 @@ const Login = () => {
 
   return (
     <LoginContainer>
-      {/* <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} /> */}
       <Form onSubmit={handleSubmit(handleOnSubmit)}>
         <h2>Welcome back</h2>
         <h4>Sign in to continue.</h4>
