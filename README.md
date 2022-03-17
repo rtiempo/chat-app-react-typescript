@@ -2,14 +2,30 @@
 
 This is a chat app built using react, typescript and firebase.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+1. clone the project
 
-### `npm start`
+```sh
+git clone  https://github.com/rtiempo/chat-app-react-typescript.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. cd into the directory
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+cd chat-app-react-typescript
+```
+
+3. install dependencies
+
+```sh
+npm install
+```
+
+## Running the app
+
+Development
+
+```sh
+npm start
+```
