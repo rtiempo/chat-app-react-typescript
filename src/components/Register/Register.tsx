@@ -6,7 +6,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { AuthContext } from '../../context/AuthContext';
-
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 type Inputs = {
   name: string;
@@ -20,20 +21,32 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log('USER: ', user);
-  }, [user])
-  
+    const addUserToFirestore = async () => {
+      if (user) {
+        await setDoc(doc(db, 'users', user.uid), {
+          uid: user.uid,
+          name: name,
+          email: email,
+        }).then(() => navigate('/login'));
+      }
+    }
+
+    addUserToFirestore().catch(console.error);
+  }, [user, name, email, navigate])
 
   const handleOnSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(name, email, password);
     console.log(data);
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(auth, email, password).then(async () => {
+        console.log('uwu');        
+      });
     } catch (error) {
       console.error(error);
-    }
+    }    
   }
 
   return (
@@ -70,7 +83,7 @@ const Register = () => {
         {errors?.password?.type === 'required' && <p>This field is required.</p>}
         {errors?.password?.type === 'minLength' && <p>Password must contain at least 3 characters.</p>}
         {errors?.password?.type === 'maxLength' && <p>Password must not exceed 32 characters.</p>}
-        <h5>Already have an account? <a>Sign in</a></h5>
+        <h5>Already have an account? <Link to='/login'>Sign in</Link></h5>
         <Button type='submit' value='Register' />
       </Form>
     </RegisterContainer>

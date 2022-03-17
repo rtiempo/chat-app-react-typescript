@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { LoginContainer, Form, Textfield } from './Login.styles';
 import { Input, Button } from '../Common/Common';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 type Inputs = {
   email: string;
@@ -14,16 +16,15 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [user, setUser] = useState({});
+  const user = useContext(AuthContext);
 
   useEffect(() => {
     console.log('USER: ', user);
   }, [user])
 
   const handleOnSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(email, password);
     console.log(data);
-    setUser(await signInWithEmailAndPassword(auth, email, password));
+    await signInWithEmailAndPassword(auth, email, password);
   }
 
   return (
@@ -50,7 +51,7 @@ const Login = () => {
         {errors?.password?.type === 'required' && <p>This field is required.</p>}
         {errors?.password?.type === 'minLength' && <p>Password must contain at least 3 characters.</p>}
         {errors?.password?.type === 'maxLength' && <p>Password must not exceed 32 characters.</p>}
-        <h5>Don't have an account? <a>Sign up</a></h5>
+        <h5>Don't have an account? <Link to='/register'>Sign up</Link></h5>
         <Button type='submit' value='Login' />
       </Form>
     </LoginContainer>
