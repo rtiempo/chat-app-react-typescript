@@ -13,6 +13,7 @@ export const Textfield = styled.div`
   background-color: #f0f4f8;
   padding: 0 1rem 0 0;
   border-radius: 0.5rem;
+  overflow: hidden;
 `;
 
 export const Logo = styled.div`
