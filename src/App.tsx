@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dashboard, Login, Register } from './components';
+import { Dashboard, Login, Register, AuthRoute } from './components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -7,7 +7,13 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Dashboard />} />
+          <Route 
+            path='/' 
+            element={
+              <AuthRoute>
+                <Dashboard />
+              </AuthRoute>
+            } />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>
