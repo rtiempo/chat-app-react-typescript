@@ -8,7 +8,7 @@ const AuthRoute: React.FC<IAuthRouteProps> = (props) => {
   const { children } = props;
   const auth = getAuth();
   const navigate = useNavigate();
-  const [ loading, setLoading ] = useState(false);  
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const AuthCheck = onAuthStateChanged(auth, (user) => {
@@ -25,11 +25,9 @@ const AuthRoute: React.FC<IAuthRouteProps> = (props) => {
     AuthCheck();
   }, [auth, navigate]);
 
-  if (loading) return <p>loading...</p>
+  if (loading) return <p>loading...</p>;
 
-  return (
-    <>{children}</>
-  )
-}
+  return <>{children}</>;
+};
 
 export default AuthRoute;

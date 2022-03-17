@@ -7,17 +7,18 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route 
-            path='/' 
+          <Route
+            path='/'
             element={
               <AuthRoute>
                 <Dashboard />
               </AuthRoute>
-            } />
+            }
+          />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>
-      </Router>    
+      </Router>
     </>
   );
 }

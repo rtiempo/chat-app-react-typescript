@@ -13,7 +13,7 @@ const Dashboard = () => {
         <Chat />
       </Grid>
     </DashboardContainer>
-  )
-}
+  );
+};
 
 export default Dashboard;

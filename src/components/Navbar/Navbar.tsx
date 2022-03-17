@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Nav, Logo, Menu, Dropdown, DropdownHeader, DropdownList, DropdownItem } from './Navbar.styles';
+import {
+  Nav,
+  Logo,
+  Menu,
+  Dropdown,
+  DropdownHeader,
+  DropdownList,
+  DropdownItem,
+} from './Navbar.styles';
 import { Icon } from '../Common/Common';
 import { FaFire, FaAngleDown } from 'react-icons/fa';
 
@@ -16,33 +24,25 @@ const Navbar = () => {
       </Logo>
       <Menu>
         <Dropdown>
-          <DropdownHeader onClick={handleDropdown} >
+          <DropdownHeader onClick={handleDropdown}>
             <Icon />
             <h3>Raiden Ei</h3>
             <FaAngleDown />
           </DropdownHeader>
           <DropdownList>
-              <DropdownItem>
-                Change password
-              </DropdownItem>
-              <DropdownItem>
-                Signout
-              </DropdownItem>
-            </DropdownList>
-          { isOpen && (
+            <DropdownItem>Change password</DropdownItem>
+            <DropdownItem>Signout</DropdownItem>
+          </DropdownList>
+          {isOpen && (
             <DropdownList>
-              <DropdownItem>
-                Change password
-              </DropdownItem>
-              <DropdownItem>
-                Signout
-              </DropdownItem>
+              <DropdownItem>Change password</DropdownItem>
+              <DropdownItem>Signout</DropdownItem>
             </DropdownList>
           )}
         </Dropdown>
       </Menu>
     </Nav>
-  )
-}
+  );
+};
 
 export default Navbar;
