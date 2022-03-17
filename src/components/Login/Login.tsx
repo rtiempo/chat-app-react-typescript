@@ -34,7 +34,7 @@ const Login = () => {
         <Textfield>
           <Input 
             type='text' 
-            placeholder='Username'
+            placeholder='Email'
             {...register('email', {required: true, pattern: /^\S+@\S+$/i})}
             onChange={(e:React.ChangeEvent<HTMLInputElement>) => {setEmail(e.target.value)}} />
         </Textfield>
