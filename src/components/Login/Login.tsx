@@ -4,7 +4,7 @@ import { Input, Button } from '../Common/Common';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
 type Inputs = {
@@ -21,6 +21,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log('USER: ', user);
@@ -28,7 +29,9 @@ const Login = () => {
 
   const handleOnSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(data);
-    await signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, password).then(() =>
+      navigate('/')
+    );
   };
 
   return (

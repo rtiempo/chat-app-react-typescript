@@ -12,12 +12,15 @@ import { Icon } from '../Common/Common';
 import { FaFire, FaAngleDown } from 'react-icons/fa';
 import { auth } from '../../firebase';
 import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
         console.log('Sign out successful');
+        navigate('/login');
       })
       .catch((error) => {
         console.error(error);
