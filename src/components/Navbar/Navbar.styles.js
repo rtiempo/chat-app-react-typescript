@@ -35,8 +35,15 @@ export const DropdownItem = styled.li`
   list-style: none;
   font-size: 0.9rem;
 
-  &:hover {
+  &:hover,
+  button:hover {
     color: #27ab83;
+  }
+
+  button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
   }
 `;
 

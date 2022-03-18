@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Nav,
   Logo,
@@ -10,11 +10,19 @@ import {
 } from './Navbar.styles';
 import { Icon } from '../Common/Common';
 import { FaFire, FaAngleDown } from 'react-icons/fa';
+import { auth } from '../../firebase';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleDropdown = () => setIsOpen(!isOpen);
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log('Sign out successful');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <Nav>
@@ -24,21 +32,17 @@ const Navbar = () => {
       </Logo>
       <Menu>
         <Dropdown>
-          <DropdownHeader onClick={handleDropdown}>
+          <DropdownHeader>
             <Icon />
             <h3>Raiden Ei</h3>
             <FaAngleDown />
           </DropdownHeader>
           <DropdownList>
             <DropdownItem>Change password</DropdownItem>
-            <DropdownItem>Signout</DropdownItem>
+            <DropdownItem>
+              <button onClick={handleSignOut}>Signout</button>
+            </DropdownItem>
           </DropdownList>
-          {isOpen && (
-            <DropdownList>
-              <DropdownItem>Change password</DropdownItem>
-              <DropdownItem>Signout</DropdownItem>
-            </DropdownList>
-          )}
         </Dropdown>
       </Menu>
     </Nav>
