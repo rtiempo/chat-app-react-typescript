@@ -1,6 +1,6 @@
 # Chat App
 
-This is a chat app built using react, typescript and firebase.
+This is a chat app built using react, typescript and firebase. It is still a work in progress.
 
 ## Getting Started
 
